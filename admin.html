@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .navbar {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #latest-news {
+            margin: 20px;
+        }
+
+        #report-link {
+            margin: 20px;
+            text-align: center;
+        }
+
+        #admin-link {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+
+    <div class="navbar">
+        <a href="main.html">Main</a>
+        <a href="admin.html">Admin</a>
+        <a href="report.html">Report</a>
+    </div>
+
+    <h2>Submit News</h2>
+    <form>
+        <label for="newsTitle">News Title:</label>
+        <input type="text" id="newsTitle" name="newsTitle">
+        <br>
+
+        <label for="newsDate">News Date:</label>
+        <input type="date" id="newsDate" name="newsDate">
+        <br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+
+        <button type="button" onclick="submitNews()">Submit News</button>
+    </form>
+
+    <script>
+        function submitNews() {
+            const newsTitle = document.getElementById('newsTitle').value;
+            const newsDate = document.getElementById('newsDate').value;
+
+            // Dummy admin ID for illustration
+            const adminId = 456;
+
+            const newsData = {
+                adminId: adminId,
+                newsTitle: newsTitle,
+                newsDate: newsDate
+            };
+
+            // Implement API endpoint to submit news on the server
+
+            alert("News submitted successfully!");
+        }
+    </script>
+</body>
+</html>
